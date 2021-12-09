@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>2.0.0</Version>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    <Authors>Dmitry Kukushkin</Authors>
+    <Company>WMTransfer Ltd.</Company>
+    <Description>Further information on http://wiki.webmoney.ru/projects/webmoney/wiki/WM-API</Description>
+    <Copyright>© Dmitry Kukushkin &lt;support@wmsigner.com&gt; 2007-2021</Copyright>
+    <PackageLicenseExpression>(MIT)</PackageLicenseExpression>
+    <PackageProjectUrl>http://www.wmsigner.com/</PackageProjectUrl>
+    <PackageTags>WebMoney, WMTransfer, WebMoney-API, WM-API</PackageTags>
+    <PackageReleaseNotes>.Net Core support</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/MarketKernel/webmoney-api</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.13" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
+    <PackageReference Include="WebMoney.Cryptography" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
