@@ -18,8 +18,9 @@ namespace WebMoney.XmlInterfaces
     {
         private long _invoiceId;
         protected override string ClassicUrl => "https://w3s.webmoney.ru/asp/XMLInvoiceRefusal.asp";
-        
-        protected override string LightUrl => "https://w3s.wmtransfer.com/asp/XMLInvoiceRefusalCert.asp";
+
+        //protected override string LightUrl => "https://w3s.wmtransfer.com/asp/XMLInvoiceRefusalCert.asp";
+        protected override string LightUrl => throw new NotSupportedException();
 
         /// <summary>
         /// Sender`s or receipt`s WMID.

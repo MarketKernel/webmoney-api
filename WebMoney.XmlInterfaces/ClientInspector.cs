@@ -229,7 +229,7 @@ namespace WebMoney.XmlInterfaces
         }
 
         /// <summary>
-        /// Moble
+        /// Mobile or SMS.
         /// </summary>
         /// <param name="currency">The type of WM purse from or to which the transfer is taking place.</param>
         /// <param name="amount">Transfer amount.</param>

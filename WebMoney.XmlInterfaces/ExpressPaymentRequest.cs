@@ -233,8 +233,10 @@ namespace WebMoney.XmlInterfaces
             switch (Initializer.Mode)
             {
                 case AuthorizationMode.Merchant:
+                    var message = BuildMessage(requestNumber);
+
                     xmlRequestBuilder.WriteElement(
-                        "md5", Utilities.CryptographyUtility.ComputeHash(BuildMessage(requestNumber) + Initializer.SecretKey));
+                        "md5", Utilities.CryptographyUtility.ComputeHash(message + Initializer.SecretKey));
                     break;
                 case AuthorizationMode.Classic:
                     xmlRequestBuilder.WriteElement("sign", Initializer.Sign(BuildMessage(requestNumber)));

@@ -20,17 +20,17 @@ namespace WebMoney.XmlInterfaces
         where TResponse : WmResponse, new()
     {
         private static readonly ILog Logger = LogManager.GetLogger(typeof(WmRequest<TResponse>));
-
+        
         private Initializer _initializer;
 
         protected internal override Uri Url
         {
             get
             {
-                if (null == _initializer)
+                if (null == Initializer)
                     return new Uri(ClassicUrl);
 
-                switch (_initializer.Mode)
+                switch (Initializer.Mode)
                 {
                     case AuthorizationMode.Light:
                         return new Uri(LightUrl);
@@ -46,20 +46,20 @@ namespace WebMoney.XmlInterfaces
         {
             get
             {
-                if (null == _initializer)
+                if (null == Initializer)
                     return null;
 
-                switch (_initializer.Mode)
+                switch (Initializer.Mode)
                 {
                     case AuthorizationMode.Light:
-                        return _initializer.Certificate;
+                        return Initializer.Certificate;
                     default:
                         return null;
                 }
             }
         }
 
-        protected internal override WebProxy Proxy => _initializer?.Proxy;
+        protected internal override WebProxy Proxy => Initializer?.Proxy;
 
         protected abstract string ClassicUrl { get; }
         protected abstract string LightUrl { get; }

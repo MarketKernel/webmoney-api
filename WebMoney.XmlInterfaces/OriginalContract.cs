@@ -62,7 +62,7 @@ namespace WebMoney.XmlInterfaces
         /// <summary>
         /// List of users WMIDs authorized to accept the given contract.
         /// </summary>
-        public List<WmId> AcceptorList { get; set; }
+        public List<WmId> AcceptorList { get; } = new List<WmId>();
 
         protected internal OriginalContract()
         {
